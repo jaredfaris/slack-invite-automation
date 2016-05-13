@@ -35,13 +35,13 @@ router.post('/invite', function(req, res) {
             res.render('result', {
               community: config.community,
               message: 'Success! You were already invited.<br>' +
-                       'Visit to <a href="https://'+ config.slackUrl +'">'+ config.community +'</a>'
+                       'Visit <a href="https://'+ config.slackUrl +'">'+ config.community +'</a>'
             });
             return;
           } else if (error === 'invalid_email') {
-            error = 'The email you entered is an invalid email.'
+            error = 'The email you entered is an invalid email.';
           } else if (error === 'invalid_auth') {
-            error = 'Something has gone wrong. Please contact a system administrator.'
+            error = 'Something has gone wrong. Please contact a system administrator.';
           }
 
           res.render('result', {
